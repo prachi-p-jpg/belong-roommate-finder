@@ -14,7 +14,7 @@ function Saved(){
       return;
     }
     
-    fetch("http://localhost:5000/api/listings")
+    fetch("https://belong-roommate-finder.onrender.com/api/listings")
       .then(res => res.json())
       .then(data => {
         const backendHomes = data.map(d => ({

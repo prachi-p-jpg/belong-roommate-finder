@@ -65,7 +65,7 @@ function Home(){
     setIsTyping(true);
     
     try {
-      const response = await fetch("http://localhost:5000/api/gemma/chat", {
+      const response = await fetch("https://belong-roommate-finder.onrender.com/api/gemma/chat", {
         method: "POST",
         headers: { 
           "Content-Type": "application/json",

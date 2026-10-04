@@ -21,7 +21,7 @@ function Listing(){
      return;
    }
    setGemmaLoading(true);
-   fetch(`http://localhost:5000/api/gemma/chat`, {
+   fetch(`https://belong-roommate-finder.onrender.com/api/gemma/chat`, {
      method: "POST",
      headers: { "Content-Type": "application/json", "Authorization": `Bearer ${token}` },
      body: JSON.stringify({ listingId: id, question: `Why is this a ${match !== null ? match : 85}% match?` })
@@ -42,7 +42,7 @@ function Listing(){
  };
 
  useEffect(() => {
-   fetch(`http://localhost:5000/api/listings/${id}`)
+   fetch(`https://belong-roommate-finder.onrender.com/api/listings/${id}`)
      .then(res => res.json())
      .then(data => {
        if(data._id) setH(data);
@@ -51,7 +51,7 @@ function Listing(){
 
    const token = localStorage.getItem("belong_token");
    if (token) {
-     fetch(`http://localhost:5000/api/listings/${id}/match`, {
+     fetch(`https://belong-roommate-finder.onrender.com/api/listings/${id}/match`, {
        headers: { "Authorization": `Bearer ${token}` }
      })
        .then(res => res.json())
@@ -72,7 +72,7 @@ function Listing(){
      return;
    }
    
-   fetch(`http://localhost:5000/api/saved/${id}`, {
+   fetch(`https://belong-roommate-finder.onrender.com/api/saved/${id}`, {
      method: "POST",
      headers: { "Authorization": `Bearer ${token}` }
    })

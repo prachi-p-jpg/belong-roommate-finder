@@ -30,7 +30,7 @@ function SearchResults() {
     params.append("page", currentPage);
     params.append("limit", 4);
 
-    fetch(`http://localhost:5000/api/listings?${params.toString()}`)
+    fetch(`https://belong-roommate-finder.onrender.com/api/listings?${params.toString()}`)
       .then(res => res.json())
       .then(data => {
         setError(null);
